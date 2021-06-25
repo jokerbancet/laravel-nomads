@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 //controller
 use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\DetailController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +18,10 @@ use App\Http\Controllers\admin\DashboardController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])
+    ->name('home');
+Route::get('/detail', [DetailController::class, 'index'])
+    ->name('detail');
 
 Route::prefix('admin')
     ->namespace('Admin')
