@@ -1,38 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.checkout')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="frontend/libraries/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="frontend/libraries/xzoom/xzoom.css">
-    <link rel="stylesheet" href="frontend/libraries/gijgo/css/gijgo.min.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="frontend/styles/main.css">
-</head>
+@section('title', 'Checkout Page')
 
-<body>
-    <!-- navbar -->
-    <div class="container">
-        <nav class="row navbar navbar-expand-lg navbar-light bg-white">
-          <div class="navbar-nav mr-auto ml-auto mr-sm-auto mr-md-auto mr-lg-0">
-              <a href="index.html" class="navbar-brand">
-                  <img src="/frontend/images/logo.png">
-              </a>
-          </div>
-          <ul class="navbar-nav mr-auto d-none d-lg-block">
-              <li>
-                  | &nbsp; Beyond the explorer of the worlds!
-              </li>
-          </ul>
-        </nav>
-    </div>
-
-    <!-- details -->
-    <section class="section-details-header"></section>
+@section('content')
+    <main>
+        <section class="section-details-header"></section>
         <section class="section-details-content">
             <div class="container">
                 <div class="row">
@@ -71,19 +43,19 @@
                                      <tbody>
                                          <tr>
                                              <td>
-                                                 <img src="/frontend/images/ava-1.png" height="60">
+                                                 <img src="{{ url('/frontend/images/ava-1.png') }}" height="60">
                                              </td>
                                              <td class="align-middle">Angga Riski</td>
                                              <td class="align-middle">CN</td>
                                              <td class="align-middle">N/A</td>
                                              <td class="align-middle">Active</td>
                                              <td class="align-middle">
-                                                 <img src="/frontend/images/ic_remove.png" height="18">
+                                                 <img src="{{ url('/frontend/images/ic_remove.png') }}" height="18">
                                              </td>
                                          </tr>
                                          <tr>
                                              <td>
-                                                 <img src="/frontend/images/ava-2.png" height="60">
+                                                 <img src="{{ url('/frontend/images/ava-2.png') }}" height="60">
                                              </td>
                                              <td class="align-middle">Galih Pratama</td>
                                              <td class="align-middle">SG</td>
@@ -91,7 +63,7 @@
                                              <td class="align-middle">Active</td>
                                              <td class="align-middle">
                                                  <a href="#">
-                                                     <img src="/frontend/images/ic_remove.png" height="18">
+                                                     <img src="{{ url('/frontend/images/ic_remove.png') }}" height="18">
                                                  </a>
                                              </td>
                                          </tr>
@@ -158,12 +130,12 @@
                                 Payment Instructions
                              </h2>
                              <p class="payment-instruction">
-                                Please complete your payment before to 
+                                Please complete your payment before to
                                 continue the wonderful trip
                              </p>
                              <div class="bank">
                                  <div class="bank-item pb-3">
-                                     <img src="/frontend/images/ic_bank.png" class="bank-image">
+                                     <img src="{{ url('/frontend/images/ic_bank.png') }}" class="bank-image">
                                      <div class="description">
                                          <h3>PT Nomads ID</h3>
                                          <p>
@@ -175,7 +147,7 @@
                                      <div class="clearfix"></div>
                                  </div>
                                  <div class="bank-item pb-3">
-                                     <img src="/frontend/images/ic_bank.png" class="bank-image">
+                                     <img src="{{ url('/frontend/images/ic_bank.png') }}" class="bank-image">
                                      <div class="description">
                                          <h3>PT Nomads ID</h3>
                                          <p>
@@ -189,93 +161,30 @@
                              </div>
                          </div>
                          <div class="join-container">
-                             <a href="success.html" class="btn btn-block btn-join-now mt-3 my-2">I Have Made Payment</a>
+                             <a href="{{ route('checkout-success') }}" class="btn btn-block btn-join-now mt-3 my-2">I Have Made Payment</a>
                          </div>
                          <div class="text-center mt-3">
-                             <a href="#" class="text-muted">Cancel Booking</a>
+                             <a href="{{ route('detail') }}" class="text-muted">Cancel Booking</a>
                          </div>
                      </div>
-                 </div>  
+                 </div>
             </div>
          </section>
+    </main>
+@endsection
 
-    <!-- footer -->
-    <footer class="section-footer mt-5 mb-4 border-top">
-        <div class="container pt-5 pb-5">
-            <div class="row justify-content-center">
-                <div class="col-12">
-                    <div class="row">
-                        <div class="col-12 col-lg-3">
-                            <h5>FEATURES</h5>
-                            <ul class="list-unstyled">
-                                <li><a href="#">Reviews</a></li>
-                                <li><a href="#">Community</a></li>
-                                <li><a href="#">Social Media Kit</a></li>
-                                <li><a href="#">Affiliate</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-12 col-lg-3">
-                            <h5>FEATURES</h5>
-                            <ul class="list-unstyled">
-                                <li><a href="#">Reviews</a></li>
-                                <li><a href="#">Community</a></li>
-                                <li><a href="#">Social Media Kit</a></li>
-                                <li><a href="#">Affiliate</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-12 col-lg-3">
-                            <h5>FEATURES</h5>
-                            <ul class="list-unstyled">
-                                <li><a href="#">Reviews</a></li>
-                                <li><a href="#">Community</a></li>
-                                <li><a href="#">Social Media Kit</a></li>
-                                <li><a href="#">Affiliate</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-12 col-lg-3">
-                            <h5>FEATURES</h5>
-                            <ul class="list-unstyled">
-                                <li><a href="#">Reviews</a></li>
-                                <li><a href="#">Community</a></li>
-                                <li><a href="#">Social Media Kit</a></li>
-                                <li><a href="#">Affiliate</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row border-top justify-content-center align-items-center pt-4">
-                <div class="col-auto text-gray-500 font-weight-light">
-                    2019 Copyright Nomads • All rights reserved • Made in Jakarta
-                </div>
-            </div>
-        </div>
-    </footer>
+@push('after-style')
+    <link rel="stylesheet" href="{{ url('frontend/libraries/gijgo/css/gijgo.min.css') }}">
+@endpush
 
-    <script src="frontend/libraries/jquery/jquery-3.6.0.min.js"></script>
-    <script src="frontend/libraries/bootstrap/js/bootstrap.js"></script>
-    <script src="frontend/libraries/retina/retina.min.js"></script>
-    <script src="frontend/libraries/xzoom/xzoom.min.js"></script>
-    <script src="frontend/libraries/gijgo/js/gijgo.min.js"></script>
+@push('after-script')
+    <script src="{{ url('frontend/libraries/gijgo/js/gijgo.min.js') }}"></script>
     <script>
-        $(document).ready(function(){
-            $('.xzoom, .xzoom-gallery').xzoom({
-                zoomWidth: 300,
-                title: false,
-                tint: '#333',
-                xoffset: 15
-            });
-
             $('.datepicker').datepicker({
                 uiLibrary : 'bootstrap4',
                 icons : {
-                    rightIcon : '<img src="frontend/images/ic_doe.png" />'
+                    rightIcon : '<img src="{{ url('frontend/images/ic_doe.png') }}" />'
                 }
             });
-        });
     </script>
-</body>
-
-</html>
+@endpush
